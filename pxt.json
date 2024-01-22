@@ -7,7 +7,12 @@
     "files": [
         "main.blocks",
         "main.ts",
-        "README.md"
+        "custom_functions.ts",
+        "t_ex1.md",
+        "t_ex2.md",
+        "t_ex3.md",
+        "t_no_exercise",
+        "_locales/nl/t_no_exercise.md"
     ],
     "testFiles": [
         "test.ts"
