@@ -18,11 +18,11 @@
         "test.ts"
     ],
     "targetVersions": {
-        "target": "1.7.25",
+        "target": "1.7.28",
         "targetId": "minecraft"
     },
     "supportedTargets": [
         "minecraft"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "tsprj"
 }
