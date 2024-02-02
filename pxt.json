@@ -9,7 +9,9 @@
         "main.ts",
         "custom_functions.ts",
         "t_ex1.md",
-        "t_ex2.md",
+        "t_ex2_1.md",
+        "t_ex2_2.md",
+        "t_ex2_3.md",
         "t_ex3.md",
         "t_no_exercise",
         "_locales/nl/t_no_exercise.md"
