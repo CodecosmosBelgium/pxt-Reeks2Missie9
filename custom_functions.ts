@@ -65,9 +65,9 @@ namespace AgentExtension {
         return (testBlockUnder(FIRE))
     }
 
-    //% block="agent next to bush"
-    export function agentNextToBush(): boolean {
-        return testBlockNextTo(FLOWERING_AZALEA_LEAVES)
+    //% block="agent next to grass"
+    export function agentNextToGrass(): boolean {
+        return testBlockNextTo(GRASS)
     }
 
     //% block="agent turn $direction"
@@ -86,7 +86,7 @@ namespace AgentExtension {
     //% block="agent turn 360 degrees"
     export function agent360() {
         if (!(testBlock(IRON_BLOCK) && testBlockNextTo(OAK_SAPLING))
-            && !(testBlockUnder(GRASS) && testBlockNextTo(FLOWERING_AZALEA_LEAVES))
+            && !(testBlockUnder(GRASS) && testBlockNextTo(GRASS))
             && !(ironBarsLeft)
             && !(torchRight)
         ) {
@@ -123,18 +123,18 @@ namespace CodeCosmos {
     export function placeTree() {
         if (testBlockUnder(GRASS) || testBlockUnder(DIRT)) {
             player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~ sapling`)
-            player.execute(`function levels/place/tree`)
+            player.execute(`function exercises/place/tree`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
             wrong()
         }
     }
 
-    //% block="place bush"
-    export function placeBush() {
+    //% block="place grass"
+    export function placeGrass() {
         if (!(testBlockUnder(GRASS) || testBlockUnder(DIRT))) {
-            player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~ flowering_azalea`)
-            player.execute(`function levels/place/bush`)
+            player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~ grass`)
+            player.execute(`function exercises/place/grass`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
             wrong()
@@ -156,18 +156,18 @@ namespace CodeCosmos {
     export function extinguishFire() {
         if (testBlockUnder(FIRE)) {
             player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~ air`)
-            player.execute(`function levels/place/air`)
+            player.execute(`function exercises/place/air`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
             wrong()
         }
     }
 
-    //% block="place bush"
-    export function placeBush2() {
+    //% block="place grass"
+    export function placeGrass2() {
         if ((!(testBlockUnder(GRASS) || testBlockNextTo(BAMBOO))) && !testBlockUnder(FIRE)) {
-            player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~ flowering_azalea`)
-            player.execute(`function levels/place/bush`)
+            player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~ grass`)
+            player.execute(`function exercises/place/grass`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
             wrong()
@@ -177,7 +177,7 @@ namespace CodeCosmos {
 
     //% block="spawn ocelot"
     export function spawnOcelot() {
-        if (testBlockUnder(GRASS) && testBlockNextTo(FLOWERING_AZALEA_LEAVES)) {
+        if (testBlockUnder(GRASS) && testBlockNextTo(GRASS)) {
             player.execute(`execute @v ~ ~1 ~ summon ocelot`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
