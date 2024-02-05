@@ -95,7 +95,7 @@ namespace AgentExtension {
 
     //% block="agent turn 360 degrees"
     export function agent360() {
-        if (!(testBlock(IRON_BLOCK) && testBlockNextTo(OAK_SAPLING))
+        if (!(testBlockUnder(IRON_BLOCK) && testBlockNextTo(OAK_SAPLING))
             && !(testBlockUnder(GRASS) && testBlockNextTo(FLOWERING_AZALEA_LEAVES))
             && !(ironBarsLeft())
             && !(torchRight())
@@ -197,7 +197,7 @@ namespace CodeCosmos {
 
     //% block="spawn parrot"
     export function spawnParrot() {
-        if (!testBlock(IRON_BLOCK) && testBlockNextTo(OAK_SAPLING)) {
+        if (!testBlockUnder(IRON_BLOCK) && testBlockNextTo(OAK_SAPLING)) {
             player.execute(`execute @v ~ ~1 ~ summon parrot`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
