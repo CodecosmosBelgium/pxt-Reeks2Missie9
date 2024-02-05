@@ -4,14 +4,14 @@
 
 ```blocks
 player.onChat("level2", function () {
-    for (let index = 0; index < 12; index++) {
+    for (let index = 0; index < 24; index++) {
         AgentExtension.agentMoveForward()
         if (CodeCosmos.testForBlock_belowAgent(GRASS) && CodeCosmos.testBlockNextTo(BAMBOO)) {
             CodeCosmos.spawnPanda()
         } else if (testBlockUnder(FIRE)) {
             CodeCosmos.extinguishFire()
         } else {
-            CodeCosmos.placeGrass2()
+            CodeCosmos.placeBush2()
         }
     }
 })

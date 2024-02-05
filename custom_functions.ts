@@ -140,11 +140,11 @@ namespace CodeCosmos {
         }
     }
 
-    //% block="place grass"
-    export function placeGrass() {
+    //% block="place bush"
+    export function placeBush() {
         if (!(testBlockUnder(GRASS) || testBlockUnder(DIRT))) {
-            player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~ tallgrass`)
-            player.execute(`function exercises/place/grass`)
+            player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~ flowering_azalea`)
+            player.execute(`function exercises/place/bush`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
             wrong()
@@ -173,11 +173,11 @@ namespace CodeCosmos {
         }
     }
 
-    //% block="place grass"
-    export function placeGrass2() {
+    //% block="place bush"
+    export function placeBush2() {
         if ((!(testBlockUnder(GRASS) && testBlockNextTo(BAMBOO))) && !testBlockUnder(FIRE)) {
-            player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~ tallgrass`)
-            player.execute(`function exercises/place/grass`)
+            player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~ flowering_azalea`)
+            player.execute(`function exercises/place/bush`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
             wrong()
