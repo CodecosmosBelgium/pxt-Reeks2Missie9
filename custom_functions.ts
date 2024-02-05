@@ -18,7 +18,11 @@ function testBlockNextTo(block: number): boolean {
         blocks.testForBlock(block, agent.getPosition().add(pos(0, -1, 1))) || 
         blocks.testForBlock(block, agent.getPosition().add(pos(0, -1, -1))) || 
         blocks.testForBlock(block, agent.getPosition().add(pos(1, -1, 0))) || 
-        blocks.testForBlock(block, agent.getPosition().add(pos(-1, -1, 0)))
+        blocks.testForBlock(block, agent.getPosition().add(pos(-1, -1, 0))) ||
+        blocks.testForBlock(block, agent.getPosition().add(pos(0, 0, 1))) || 
+        blocks.testForBlock(block, agent.getPosition().add(pos(0, 0, -1))) || 
+        blocks.testForBlock(block, agent.getPosition().add(pos(1, 0, 0))) || 
+        blocks.testForBlock(block, agent.getPosition().add(pos(-1, 0, 0)))
     )
 }
 
