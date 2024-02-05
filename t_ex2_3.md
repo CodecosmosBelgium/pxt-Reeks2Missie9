@@ -7,7 +7,7 @@ player.onChat("level2", function () {
     while (!testBlockUnder(GOLD_BLOCK)) {
         AgentExtension.agentMoveForward()
         
-        if (CodeCosmos.testForBlock_belowAgent(GRASS) && CodeCosmos.testBlockNextTo(FLOWERING_AZALEA_LEAVES)) {
+        if (CodeCosmos.testForBlock_belowAgent(GRASS) && CodeCosmos.agentNextToBush()) {
             CodeCosmos.spawnOcelot()
         } else if (!testBlock(IRON_BLOCK) && testBlockNextTo(OAK_SAPLING)) {
             CodeCosmos.spawnParrot()
