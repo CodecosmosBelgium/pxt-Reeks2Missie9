@@ -1,5 +1,6 @@
 {
     "name": "reeks2missie9",
+    "version": "0.0.1",
     "dependencies": {
         "core": "*",
         "builder": "*"
