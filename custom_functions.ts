@@ -49,7 +49,17 @@ enum AgentTurn {
 
 //% color="#D83B01" weight=100 icon="\uf20a" block="AgentExtension"
 namespace AgentExtension {
+    //% block="agent move forward"
+    export function agentMoveForward() {
+        player.execute(`scoreboard players set @a level_timer 0`)
+        player.execute(`scoreboard players add @a agent_moved 1`)
+        loops.pause(100)
+        agent.move(FORWARD, 1)
+    }
+    
     //% block="agent move $direction by $amount"
+    //% amount.defl=1
+    //% amount.min=1
     export function agentMoveFourDirection(direction: FourDirection, amount: number) {
         for (let i = 0; i < amount; i++) {
             player.execute(`scoreboard players set @a level_timer 0`)
