@@ -159,7 +159,8 @@ namespace CodeCosmos {
     //% block="place bush"
     export function placeBush() {
         if (!(testBlockUnder(GRASS) || testBlockUnder(DIRT))) {
-            Math.round(Math.random()) == 0 ? player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~-1 flowering_azalea`) : player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~1 flowering_azalea`)
+            bushLeftRight++
+            bushLeftRight % 2 == 0 ? player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~-1 flowering_azalea`) : player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~1 flowering_azalea`)
             player.execute(`function exercises/place/bush`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
