@@ -29,4 +29,4 @@ player.onChat("level2", function () {
 ```
 
 ## Multiple Selection
-Use the learning platform to solve the exercise.
+Walk down the course until you come upon a block of gold. If the Agent stands on a block of grass AND next to a bush, he spawns an ocelot, otherwise if the Agent stands next to a tree AND NOT on a block of iron, he spawns a parrot, otherwise if the Agent runs into a fence, he goes to the left, otherwise if the Agent runs into a torch, he goes to the right, otherwise he does a 360.

@@ -26,4 +26,4 @@ player.onChat("level2", function () {
 ```
 
 ## Multiple Selection
-Use the learning platform to solve the exercise.
+If the Agent is on a block of grass OR on a block of dirt, he plants a tree, otherwise he plants grass.

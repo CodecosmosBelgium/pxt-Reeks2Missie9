@@ -24,4 +24,4 @@ player.onChat("level2", function () {
 ```
 
 ## Multiple Selection
-Use the learning platform to solve the exercise.
+If the Agent is on a block of grass AND next to bamboo, he spawns a panda. Otherwise if the Agent is on a block of fire, then he extinguishes it, otherwise he plants grass.

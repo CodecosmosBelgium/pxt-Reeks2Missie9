@@ -17,4 +17,4 @@ player.onChat("level1", function () {
 ```
 
 ## Multiple Selection
-Use the learning platform to solve the exercise.
+Pick up the 5 items from the poachers.
