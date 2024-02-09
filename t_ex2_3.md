@@ -7,13 +7,13 @@ player.onChat("level2", function () {
     while (!testBlockUnder(GOLD_BLOCK)) {
         AgentExtension.agentMoveForward()
         
-        if (CodeCosmos.testForBlock_belowAgent(GRASS) && CodeCosmos.agentNextToBush()) {
+        if (CodeCosmos.testForBlock_belowAgent(GRASS) && AgentExtension.agentNextToBush()) {
             CodeCosmos.spawnOcelot()
-        } else if (!testBlock(IRON_BLOCK) && testBlockNextTo(OAK_SAPLING)) {
+        } else if (!testBlock(IRON_BLOCK) && AgentExtension.agentNextToTree()) {
             CodeCosmos.spawnParrot()
-        } else if (agentInFrontIronBars()) {
+        } else if (AgentExtension.agentInFrontIronBars()) {
             AgentExtension.agentTurn(AgentTurn.Left)
-        } else if (agentInFrontTorch()) {
+        } else if (AgentExtension.agentInFrontTorch()) {
             AgentExtension.agentTurn(AgentTurn.Right)
         } else {
             AgentExtension.agent360()

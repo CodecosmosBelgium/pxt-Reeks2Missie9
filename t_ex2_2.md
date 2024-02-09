@@ -6,7 +6,7 @@
 player.onChat("level2", function () {
     for (let index = 0; index < 24; index++) {
         AgentExtension.agentMoveForward()
-        if (CodeCosmos.testForBlock_belowAgent(GRASS) && CodeCosmos.testBlockNextTo(BAMBOO)) {
+        if (CodeCosmos.testForBlock_belowAgent(GRASS) && AgentExtension.agentNextToBamboo()) {
             CodeCosmos.spawnPanda()
         } else if (testBlock(FIRE)) {
             CodeCosmos.extinguishFire()

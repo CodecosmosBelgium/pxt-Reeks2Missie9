@@ -87,6 +87,11 @@ namespace AgentExtension {
     export function agentNextToBush(): boolean {
         return testBlockNextTo(FLOWERING_AZALEA_LEAVES)
     }
+    
+    //% block="agent next to tree"
+    export function agentNextToTree(): boolean {
+        return testBlockNextTo(OAK_SAPLING)
+    }
 
     //% block="agent turn $direction"
     export function agentTurn(direction: AgentTurn) {
