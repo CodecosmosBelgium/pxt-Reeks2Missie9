@@ -60,7 +60,6 @@ namespace AgentExtension {
             player.execute(`scoreboard players set @a level_timer 0`)
             agent.move(direction, 1)
             loops.pause(100)
-            testBlockUnder(TNT) && player.execute(`function exercises/ex_1/tnt`)
         }
     }
     
