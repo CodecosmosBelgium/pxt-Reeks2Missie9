@@ -4,7 +4,14 @@
 
 ```blocks
 player.onChat("level3", function () {
-    
+    agent.turn(LEFT_TURN)
+    AgentExtension.agentMoveFourDirection(FourDirection.Forward, 1)
+})
+
+loops.forever(function() {
+    if (AgentExtension.agentOnGold()) {
+        CodeCosmos.freeAnimals()
+    }
 })
 ```
 

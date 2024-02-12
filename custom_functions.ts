@@ -82,6 +82,11 @@ namespace AgentExtension {
     export function agentOnFire(): boolean {
         return (testBlock(FIRE))
     }
+    
+    //% block="agent on gold block"
+    export function agentOnGold(): boolean {
+        return (testBlock(GOLD_BLOCK))
+    }
 
     //% block="agent next to bush"
     export function agentNextToBush(): boolean {
@@ -214,6 +219,15 @@ namespace CodeCosmos {
         if (!testBlockUnder(IRON_BLOCK) && testBlockNextTo(OAK_SAPLING)) {
             player.execute(`execute @v ~ ~1 ~ summon parrot`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
+        } else {
+            wrong()
+        }
+    }
+    
+    //% block="free the animals"
+    export function freeAnimals() {
+        if (testBlockUnder(GOLD_BLOCK)) {
+            player.execute(`function ex_3/animals`)
         } else {
             wrong()
         }
