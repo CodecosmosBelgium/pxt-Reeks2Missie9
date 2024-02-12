@@ -5,13 +5,15 @@
 ```blocks
 player.onChat("level3", function () {
     agent.turn(LEFT_TURN)
-    AgentExtension.agentMoveFourDirection(FourDirection.Forward, 1)
-})
-
-loops.forever(function() {
-    if (AgentExtension.agentOnGold()) {
-        CodeCosmos.freeAnimals()
+    
+    AgentExtension.agentMoveFourDirection_Extra(FourDirection.Forward, 1)
+    
+    if (CodeCosmos.testForBlock_belowAgent(GRASS) && AgentExtension.agentNextToBamboo()) {
+        CodeCosmos.spawnPanda_Extra()
+    } else if (CodeCosmos.testForBlock_belowAgent(GRASS)) {
+        CodeCosmos.spawnParrot_Extra()
     }
+    
 })
 ```
 

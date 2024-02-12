@@ -82,11 +82,6 @@ namespace AgentExtension {
     export function agentOnFire(): boolean {
         return (testBlock(FIRE))
     }
-    
-    //% block="agent on gold block"
-    export function agentOnGold(): boolean {
-        return (testBlock(GOLD_BLOCK))
-    }
 
     //% block="agent next to bush"
     export function agentNextToBush(): boolean {
@@ -126,6 +121,20 @@ namespace AgentExtension {
             wrong()
         }
         player.execute(`scoreboard players set @a level_timer 0`)
+    }
+
+    //% block="agent move $direction by $amount"
+    //% amount.defl=1
+    //% amount.min=1
+    export function agentMoveFourDirection_Extra(direction: FourDirection, amount: number) {
+        for (let i = 0; i < amount; i++) {
+            player.execute(`function exercises/ex_3/tag_check`)
+            player.execute(`scoreboard players set @a level_timer 0`)
+            agent.move(direction, 1)
+            loops.pause(50)
+            player.execute(`tag @a remove tag_given`)
+            loops.pause(50)
+        }
     }
 }
 
@@ -224,10 +233,22 @@ namespace CodeCosmos {
         }
     }
     
-    //% block="free the animals"
-    export function freeAnimals() {
-        if (testBlockUnder(GOLD_BLOCK)) {
-            player.execute(`function ex_3/animals`)
+    //% block="spawn parrot"
+    export function spawnParrot_Extra() {
+        if (testBlockUnder(SAND)) {
+            player.execute(`execute @v ~ ~1 ~ summon parrot`)
+            player.execute(`tag @a remove sand`)
+        } else {
+            wrong()
+        }
+    }
+
+    //% block="spawn panda"
+    export function spawnPanda_Extra() {
+        if (testBlockUnder(GRASS) && testBlockNextTo(BAMBOO)) {
+            player.execute(`execute @v ~ ~1 ~ summon panda`)
+            player.execute(`tag @a remove grass`)
+            player.execute(`tag @a remove bamboo`)
         } else {
             wrong()
         }
